@@ -4,7 +4,7 @@ export const metadata = { title: "About" };
 
 export default function AboutPage() {
   return (
-    <div className="flex gap-10">
+    <div className="flex flex-col md:flex-row gap-8 md:gap-10">
       <Sidebar />
       <div className="flex-1 min-w-0 max-w-2xl">
         <h1 className="serif italic text-4xl mb-6">About</h1>

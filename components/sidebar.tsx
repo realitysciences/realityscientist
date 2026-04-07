@@ -3,7 +3,7 @@ import { TOPICS } from "@/lib/topics";
 
 export function Sidebar({ activeTopic }: { activeTopic?: string }) {
   return (
-    <aside className="w-[200px] shrink-0 text-sm">
+    <aside className="w-full md:w-[200px] md:shrink-0 text-sm">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/avatar.png"
@@ -57,7 +57,7 @@ export function Sidebar({ activeTopic }: { activeTopic?: string }) {
       <ul className="space-y-1 text-xs">
         <li><a href="https://x.com/relohu" className="underline" style={{ textUnderlineOffset: 3 }}>@relohu</a></li>
         <li><a href="https://x.com/spheronaut" className="underline" style={{ textUnderlineOffset: 3 }}>@spheronaut</a></li>
-        <li><a href="https://x.com/rosecolorednews" className="underline" style={{ textUnderlineOffset: 3 }}>@rosecolorednews</a></li>
+        <li><a href="https://x.com/rosecolornews" className="underline" style={{ textUnderlineOffset: 3 }}>@rosecolornews</a></li>
         <li><a href="https://x.com/mindreportai" className="underline" style={{ textUnderlineOffset: 3 }}>@mindreportai</a></li>
       </ul>
     </aside>

@@ -27,7 +27,7 @@ export default function TheoryPage({ params }: { params: { slug: string } }) {
   if (!t) notFound();
 
   return (
-    <div className="flex gap-10">
+    <div className="flex flex-col md:flex-row gap-8 md:gap-10">
       <Sidebar activeTopic={t.topic} />
       <article className="flex-1 min-w-0 max-w-2xl">
         <nav className="text-xs mb-6" style={{ color: "var(--muted)" }}>
@@ -39,7 +39,7 @@ export default function TheoryPage({ params }: { params: { slug: string } }) {
         >
           Theory · {t.topic}
         </div>
-        <h1 className="serif italic text-4xl leading-tight mb-4">{t.title}</h1>
+        <h1 className="serif italic text-3xl sm:text-4xl leading-tight mb-4">{t.title}</h1>
         <div className="text-xs mb-10" style={{ color: "var(--muted)" }}>
           {new Date(t.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
           {" · "}{t.readTime}{" · "}Status: {t.status}

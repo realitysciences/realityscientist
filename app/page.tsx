@@ -8,7 +8,7 @@ export default function HomePage() {
   const rest = theories.filter((t) => t.slug !== featured?.slug);
 
   return (
-    <div className="flex gap-10">
+    <div className="flex flex-col md:flex-row gap-8 md:gap-10">
       <Sidebar />
       <div className="flex-1 min-w-0">
         {featured && (

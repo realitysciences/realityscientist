@@ -15,7 +15,7 @@ export function TheoryCard({ t, hero = false }: { t: Theory; hero?: boolean }) {
         <div className="text-[10px] uppercase tracking-wider mb-2 font-medium" style={{ color: TOPIC_INK[t.topic] }}>
           {t.topic}
         </div>
-        <h3 className={`serif italic ${hero ? "text-2xl" : "text-xl"} leading-snug mb-2`}>
+        <h3 className={`serif italic ${hero ? "text-xl sm:text-2xl" : "text-lg sm:text-xl"} leading-snug mb-2`}>
           {t.title}
         </h3>
         {hero && (

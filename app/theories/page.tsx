@@ -16,7 +16,7 @@ export default function TheoriesPage({
   const filtered = topic ? all.filter((t) => t.topic === topic) : all;
 
   return (
-    <div className="flex gap-10">
+    <div className="flex flex-col md:flex-row gap-8 md:gap-10">
       <Sidebar activeTopic={topic} />
       <div className="flex-1 min-w-0">
         <h1 className="serif italic text-3xl mb-2">Theories</h1>
