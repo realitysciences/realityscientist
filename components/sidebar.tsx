@@ -11,6 +11,7 @@ export function Sidebar({ activeTopic, hideTopics = false }: { activeTopic?: str
         className="w-24 h-24 mb-4 object-contain"
         style={{ borderColor: "var(--border)" }}
       />
+      <div className="text-sm md:text-xs uppercase tracking-wider mb-1" style={{ color: "var(--muted)" }}>Gedalia</div>
       <div className="serif italic text-xl md:text-lg leading-tight">Dr. David Benson</div>
       <div className="text-sm md:text-xs mb-3" style={{ color: "var(--muted)" }}>
         Reality Scientist
