@@ -46,7 +46,6 @@ export default function TheoryPage({ params }: { params: { slug: string } }) {
         </div>
 
         <div className="prose-serif">
-          {/* @ts-expect-error Async Server Component */}
           <MDXRemote source={t.content} />
         </div>
 
