@@ -4,21 +4,19 @@ import { TOPICS } from "@/lib/topics";
 export function Sidebar({ activeTopic }: { activeTopic?: string }) {
   return (
     <aside className="w-[200px] shrink-0 text-sm">
-      <div
-        className="w-20 h-20 rounded-full mb-4 border"
-        style={{
-          borderColor: "var(--border)",
-          background:
-            "radial-gradient(circle at 30% 30%, #c9c4b6, #5a564c)",
-        }}
-        aria-hidden
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/avatar.png"
+        alt="Dr. David Benson"
+        className="w-24 h-24 mb-4 object-contain"
+        style={{ borderColor: "var(--border)" }}
       />
       <div className="serif italic text-lg leading-tight">Dr. David Benson</div>
       <div className="text-xs mb-3" style={{ color: "var(--muted)" }}>
         Reality Scientist
       </div>
       <p className="text-xs leading-relaxed mb-5" style={{ color: "var(--muted)" }}>
-        Investigating the structure of experience — time, identity, memory, and
+        Investigating the structure of experience , time, identity, memory, and
         the patterns underneath.
       </p>
 
@@ -34,8 +32,8 @@ export function Sidebar({ activeTopic }: { activeTopic?: string }) {
                 href={`/theories?topic=${t}`}
                 className="px-2 py-0.5 text-[11px] rounded-full border"
                 style={{
-                  borderColor: "var(--border)",
-                  background: active ? "var(--surface)" : "transparent",
+                  borderColor: active ? "var(--fg)" : "var(--border)",
+                  background: `var(--topic-${t.toLowerCase()})`,
                 }}
               >
                 {t}
@@ -51,7 +49,16 @@ export function Sidebar({ activeTopic }: { activeTopic?: string }) {
       <ul className="space-y-1 text-xs">
         <li><a href="https://relohu.com" className="underline" style={{ textUnderlineOffset: 3 }}>ReLoHu</a></li>
         <li><a href="https://mindreport.ai" className="underline" style={{ textUnderlineOffset: 3 }}>Mind Report</a></li>
-        <li><a href="https://x.com/relohu" className="underline" style={{ textUnderlineOffset: 3 }}>X / @relohu</a></li>
+      </ul>
+
+      <div className="text-[10px] uppercase tracking-wider mt-4 mb-2" style={{ color: "var(--muted)" }}>
+        On X
+      </div>
+      <ul className="space-y-1 text-xs">
+        <li><a href="https://x.com/relohu" className="underline" style={{ textUnderlineOffset: 3 }}>@relohu</a></li>
+        <li><a href="https://x.com/spheronaut" className="underline" style={{ textUnderlineOffset: 3 }}>@spheronaut</a></li>
+        <li><a href="https://x.com/rosecolorednews" className="underline" style={{ textUnderlineOffset: 3 }}>@rosecolorednews</a></li>
+        <li><a href="https://x.com/mindreportai" className="underline" style={{ textUnderlineOffset: 3 }}>@mindreportai</a></li>
       </ul>
     </aside>
   );

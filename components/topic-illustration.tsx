@@ -3,12 +3,15 @@ import { TOPIC_COLORS, TOPIC_INK, type Topic } from "@/lib/topics";
 export function TopicIllustration({
   topic,
   variant = "card",
+  slug,
 }: {
   topic: Topic;
   variant?: "card" | "hero";
+  slug?: string;
 }) {
   const ink = TOPIC_INK[topic];
   const h = variant === "hero" ? 220 : 130;
+  const isFish = slug === "the-fish-do-not-see-what-we-see";
   return (
     <div
       className="w-full overflow-hidden"
@@ -18,6 +21,27 @@ export function TopicIllustration({
       }}
     >
       <svg viewBox="0 0 400 220" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+        {isFish && (
+          <g stroke={ink} strokeWidth="1.4" fill="none">
+            {/* water lines */}
+            <path d="M0 40 Q50 30 100 40 T200 40 T300 40 T400 40" opacity="0.5" />
+            <path d="M0 60 Q50 50 100 60 T200 60 T300 60 T400 60" opacity="0.4" />
+            <path d="M0 195 Q50 185 100 195 T200 195 T300 195 T400 195" opacity="0.4" />
+            {/* big fish */}
+            <path d="M120 110 Q170 70 240 110 Q170 150 120 110 Z" />
+            <path d="M120 110 L80 80 L95 110 L80 140 Z" />
+            <circle cx="220" cy="105" r="3" fill={ink} />
+            <path d="M150 110 Q170 100 190 110" />
+            {/* small fish */}
+            <path d="M280 150 Q310 130 345 150 Q310 170 280 150 Z" />
+            <path d="M280 150 L260 135 L268 150 L260 165 Z" />
+            <circle cx="335" cy="148" r="2" fill={ink} />
+            {/* bubbles */}
+            <circle cx="260" cy="90" r="4" />
+            <circle cx="270" cy="75" r="3" />
+            <circle cx="278" cy="62" r="2" />
+          </g>
+        )}
         {topic === "Time" && (
           <g stroke={ink} strokeWidth="1.4" fill="none">
             {[...Array(7)].map((_, i) => (
@@ -46,7 +70,7 @@ export function TopicIllustration({
             <path d="M20 200 Q100 60 200 130 T380 80" opacity="0.6" />
           </g>
         )}
-        {topic === "Perception" && (
+        {!isFish && topic === "Perception" && (
           <g stroke={ink} strokeWidth="1.2" fill="none">
             {[...Array(12)].map((_, i) => {
               const a = (i / 12) * Math.PI * 2;

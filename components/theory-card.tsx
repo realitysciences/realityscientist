@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Theory } from "@/lib/theories";
 import { TopicIllustration } from "./topic-illustration";
+import { TOPIC_INK } from "@/lib/topics";
 
 export function TheoryCard({ t, hero = false }: { t: Theory; hero?: boolean }) {
   return (
@@ -9,9 +10,9 @@ export function TheoryCard({ t, hero = false }: { t: Theory; hero?: boolean }) {
       className="block border rounded-lg overflow-hidden hover:opacity-95 transition"
       style={{ borderColor: "var(--border)", background: "var(--bg)" }}
     >
-      <TopicIllustration topic={t.topic} variant={hero ? "hero" : "card"} />
+      <TopicIllustration topic={t.topic} variant={hero ? "hero" : "card"} slug={t.slug} />
       <div className="p-5">
-        <div className="text-[10px] uppercase tracking-wider mb-2" style={{ color: "var(--muted)" }}>
+        <div className="text-[10px] uppercase tracking-wider mb-2 font-medium" style={{ color: TOPIC_INK[t.topic] }}>
           {t.topic}
         </div>
         <h3 className={`serif italic ${hero ? "text-2xl" : "text-xl"} leading-snug mb-2`}>

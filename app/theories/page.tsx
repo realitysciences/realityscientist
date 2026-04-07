@@ -41,8 +41,8 @@ export default function TheoriesPage({
               href={`/theories?topic=${t}`}
               className="px-3 py-1 text-xs rounded-full border"
               style={{
-                borderColor: "var(--border)",
-                background: topic === t ? "var(--surface)" : "transparent",
+                borderColor: topic === t ? "var(--fg)" : "var(--border)",
+                background: `var(--topic-${t.toLowerCase()})`,
               }}
             >
               {t}

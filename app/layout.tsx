@@ -6,7 +6,7 @@ import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://realityscientist.com"),
-  title: { default: "Reality Scientist — Dr. David Benson", template: "%s · Reality Scientist" },
+  title: { default: "Reality Scientist , Dr. David Benson", template: "%s · Reality Scientist" },
   description: "Theories of time, identity, memory, and the structure of experience by Dr. David Benson.",
 };
 
