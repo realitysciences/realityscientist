@@ -2,9 +2,11 @@ import { Sidebar } from "@/components/sidebar";
 import { TheoryCard } from "@/components/theory-card";
 import { getAllTheories } from "@/lib/theories";
 
+export const dynamic = "force-dynamic";
+
 export default function HomePage() {
   const theories = getAllTheories();
-  const featured = theories.find((t) => t.featured) ?? theories[0];
+  const featured = theories[Math.floor(Math.random() * theories.length)];
   const rest = theories.filter((t) => t.slug !== featured?.slug);
 
   return (
