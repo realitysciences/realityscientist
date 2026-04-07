@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #ffffff;
+  --fg: #111110;
+  --muted: #6b6b66;
+  --border: #e6e5df;
+  --surface: #faf9f4;
+  --topic-time: #EEEDFE;
+  --topic-identity: #E1F5EE;
+  --topic-structure: #FAECE7;
+  --topic-memory: #FAEEDA;
+  --topic-perception: #FBEAF0;
+  --topic-language: #E6F1FB;
+}
+.dark {
+  --topic-time: #26215C;
+  --topic-identity: #04342C;
+  --topic-structure: #4A1B0C;
+  --topic-memory: #412402;
+  --topic-perception: #4B1528;
+  --topic-language: #042C53;
+  --bg: #0f0f0e;
+  --fg: #f0efe8;
+  --muted: #8a8a82;
+  --border: #26241f;
+  --surface: #181714;
+}
+
+html, body { background: var(--bg); color: var(--fg); }
+body { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+
+.serif { font-family: Georgia, Cambria, "Times New Roman", serif; }
+.wordmark { font-family: Georgia, serif; font-style: italic; font-weight: 400; }
+
+.prose-serif { font-family: Georgia, serif; font-size: 16px; line-height: 1.8; }
+.prose-serif p { margin: 1.1em 0; }
+.prose-serif h2 { font-size: 1.5rem; font-style: italic; margin: 2rem 0 0.75rem; font-weight: 400; }
+.prose-serif h3 { font-size: 1.2rem; font-style: italic; margin: 1.5rem 0 0.5rem; font-weight: 400; }
+.prose-serif blockquote {
+  border-left: 3px solid var(--fg);
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+.prose-serif a { text-decoration: underline; text-underline-offset: 3px; }
