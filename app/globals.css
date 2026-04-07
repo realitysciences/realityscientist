@@ -30,12 +30,19 @@
 }
 
 html, body { background: var(--bg); color: var(--fg); }
-body { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  -webkit-text-size-adjust: 100%;
+}
 
 .serif { font-family: Georgia, Cambria, "Times New Roman", serif; }
 .wordmark { font-family: Georgia, serif; font-style: italic; font-weight: 400; }
 
-.prose-serif { font-family: Georgia, serif; font-size: 16px; line-height: 1.8; }
+.prose-serif { font-family: Georgia, serif; font-size: 19px; line-height: 1.75; }
+@media (min-width: 768px) {
+  .prose-serif { font-size: 18px; line-height: 1.8; }
+}
 .prose-serif p { margin: 1.1em 0; }
 .prose-serif h2 { font-size: 1.5rem; font-style: italic; margin: 2rem 0 0.75rem; font-weight: 400; }
 .prose-serif h3 { font-size: 1.2rem; font-style: italic; margin: 1.5rem 0 0.5rem; font-weight: 400; }

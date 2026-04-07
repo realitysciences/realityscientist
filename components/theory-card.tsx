@@ -11,19 +11,19 @@ export function TheoryCard({ t, hero = false }: { t: Theory; hero?: boolean }) {
       style={{ borderColor: "var(--border)", background: "var(--bg)" }}
     >
       <TopicIllustration topic={t.topic} variant={hero ? "hero" : "card"} slug={t.slug} />
-      <div className="p-5">
-        <div className="text-[10px] uppercase tracking-wider mb-2 font-medium" style={{ color: TOPIC_INK[t.topic] }}>
+      <div className="p-5 sm:p-6">
+        <div className="text-xs uppercase tracking-wider mb-2 font-medium" style={{ color: TOPIC_INK[t.topic] }}>
           {t.topic}
         </div>
-        <h3 className={`serif italic ${hero ? "text-xl sm:text-2xl" : "text-lg sm:text-xl"} leading-snug mb-2`}>
+        <h3 className={`serif italic ${hero ? "text-2xl sm:text-3xl" : "text-xl sm:text-2xl"} leading-snug mb-3`}>
           {t.title}
         </h3>
         {hero && (
-          <p className="text-sm mb-3" style={{ color: "var(--muted)" }}>
+          <p className="text-base sm:text-lg mb-3 leading-relaxed" style={{ color: "var(--muted)" }}>
             {t.excerpt}
           </p>
         )}
-        <div className="text-xs" style={{ color: "var(--muted)" }}>
+        <div className="text-sm" style={{ color: "var(--muted)" }}>
           {formatDate(t.date)} · {t.readTime}
         </div>
       </div>

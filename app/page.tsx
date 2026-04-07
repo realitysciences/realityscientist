@@ -1,4 +1,4 @@
-import { Sidebar } from "@/components/sidebar";
+import { Sidebar, SidebarLinks } from "@/components/sidebar";
 import { TheoryCard } from "@/components/theory-card";
 import { getAllTheories } from "@/lib/theories";
 
@@ -22,6 +22,9 @@ export default function HomePage() {
           {rest.map((t) => (
             <TheoryCard key={t.slug} t={t} />
           ))}
+        </div>
+        <div className="md:hidden">
+          <SidebarLinks />
         </div>
       </div>
     </div>

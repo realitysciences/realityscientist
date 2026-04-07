@@ -1,4 +1,4 @@
-import { Sidebar } from "@/components/sidebar";
+import { Sidebar, SidebarLinks } from "@/components/sidebar";
 
 export const metadata = { title: "Contact" };
 
@@ -21,6 +21,9 @@ export default function ContactPage() {
             Replies are not always immediate. Letters that engage with the
             ideas tend to get answered first.
           </p>
+        </div>
+        <div className="md:hidden">
+          <SidebarLinks />
         </div>
       </div>
     </div>

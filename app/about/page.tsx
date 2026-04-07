@@ -1,4 +1,4 @@
-import { Sidebar } from "@/components/sidebar";
+import { Sidebar, SidebarLinks } from "@/components/sidebar";
 
 export const metadata = { title: "About" };
 
@@ -22,6 +22,9 @@ export default function AboutPage() {
             Alongside the writing here, he develops <a href="https://relohu.com">ReLoHu</a>,
             a practice grounded in these theories, and <a href="https://mindreport.ai">Mind Report</a>.
           </p>
+        </div>
+        <div className="md:hidden">
+          <SidebarLinks />
         </div>
       </div>
     </div>

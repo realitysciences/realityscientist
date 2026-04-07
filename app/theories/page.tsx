@@ -1,4 +1,4 @@
-import { Sidebar } from "@/components/sidebar";
+import { Sidebar, SidebarLinks } from "@/components/sidebar";
 import { TheoryCard } from "@/components/theory-card";
 import { getAllTheories } from "@/lib/theories";
 import { TOPICS, type Topic } from "@/lib/topics";
@@ -17,7 +17,7 @@ export default function TheoriesPage({
 
   return (
     <div className="flex flex-col md:flex-row gap-8 md:gap-10">
-      <Sidebar activeTopic={topic} />
+      <Sidebar activeTopic={topic} hideTopics />
       <div className="flex-1 min-w-0">
         <h1 className="serif italic text-3xl mb-2">Theories</h1>
         <p className="text-sm mb-6" style={{ color: "var(--muted)" }}>
@@ -54,6 +54,9 @@ export default function TheoriesPage({
           {filtered.map((t) => (
             <TheoryCard key={t.slug} t={t} />
           ))}
+        </div>
+        <div className="md:hidden">
+          <SidebarLinks />
         </div>
       </div>
     </div>
