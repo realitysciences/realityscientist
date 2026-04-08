@@ -3,7 +3,7 @@ import { TOPICS } from "@/lib/topics";
 
 export function Sidebar({ activeTopic, hideTopics = false }: { activeTopic?: string; hideTopics?: boolean }) {
   return (
-    <aside className="w-full md:w-[200px] md:shrink-0 text-base md:text-sm">
+    <aside className="w-full md:w-[220px] md:shrink-0 text-base">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/avatar.png"
@@ -11,19 +11,19 @@ export function Sidebar({ activeTopic, hideTopics = false }: { activeTopic?: str
         className="w-24 h-24 mb-4 object-contain"
         style={{ borderColor: "var(--border)" }}
       />
-      <div className="text-sm md:text-xs uppercase tracking-wider mb-1" style={{ color: "var(--muted)" }}>Gedalia</div>
-      <div className="serif italic text-xl md:text-lg leading-tight">Dr. David Benson</div>
-      <div className="text-sm md:text-xs mb-3" style={{ color: "var(--muted)" }}>
+      <div className="text-xs uppercase tracking-wider mb-1" style={{ color: "var(--muted)" }}>Gedalia</div>
+      <div className="serif italic text-xl leading-tight">Dr. David Benson</div>
+      <div className="text-sm mb-3" style={{ color: "var(--muted)" }}>
         Reality Scientist
       </div>
-      <p className="text-sm md:text-xs leading-relaxed mb-5" style={{ color: "var(--muted)" }}>
+      <p className="text-sm leading-relaxed mb-5" style={{ color: "var(--muted)" }}>
         Investigating the structure of experience , time, identity, memory, and
         the patterns underneath.
       </p>
 
       {!hideTopics && (
       <>
-      <div className="text-[11px] md:text-[10px] uppercase tracking-wider mb-2" style={{ color: "var(--muted)" }}>
+      <div className="text-xs uppercase tracking-wider mb-2" style={{ color: "var(--muted)" }}>
         Topics
       </div>
       <ul className="flex flex-wrap gap-1.5 mb-5">
@@ -33,7 +33,7 @@ export function Sidebar({ activeTopic, hideTopics = false }: { activeTopic?: str
             <li key={t}>
               <Link
                 href={`/theories?topic=${t}`}
-                className="px-2.5 py-1 text-xs md:text-[11px] rounded-full border"
+                className="px-2.5 py-1 text-xs rounded-full border"
                 style={{
                   borderColor: active ? "var(--fg)" : "var(--border)",
                   background: `var(--topic-${t.toLowerCase()})`,
@@ -58,8 +58,8 @@ export function Sidebar({ activeTopic, hideTopics = false }: { activeTopic?: str
 }
 
 export function SidebarLinks({ compact = false }: { compact?: boolean }) {
-  const sizeLabel = compact ? "text-[10px]" : "text-xs";
-  const sizeLink = compact ? "text-xs" : "text-base";
+  const sizeLabel = compact ? "text-xs" : "text-xs";
+  const sizeLink = compact ? "text-sm" : "text-base";
   return (
     <div className={compact ? "" : "mt-12 pt-8 border-t"} style={!compact ? { borderColor: "var(--border)" } : undefined}>
       <div className={`${sizeLabel} uppercase tracking-wider mb-2`} style={{ color: "var(--muted)" }}>
