@@ -22,6 +22,16 @@ export default function AboutPage() {
             Alongside the writing here, he develops <a href="https://relohu.com">ReLoHu</a>,
             a practice grounded in these theories, and <a href="https://mindreport.ai">Mind Report</a>.
           </p>
+          <h2>A note on how to read these</h2>
+          <p>
+            The theories on this website are published as possibilities, not as facts.
+            For any given piece of reality there are multiple possibilities, and what
+            appears here is one way of looking, offered for consideration rather than
+            assertion. The theories do not necessarily reflect the personal opinions of
+            the author. They are working hypotheses, thinking tools, and invitations to
+            look at familiar things from an angle that may or may not turn out to be
+            useful. Read them the way you would read any experiment in progress.
+          </p>
         </div>
         <div className="md:hidden">
           <SidebarLinks />
