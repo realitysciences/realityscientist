@@ -13,6 +13,14 @@ export default function HomePage() {
     <div className="flex flex-col md:flex-row gap-8 md:gap-10">
       <Sidebar />
       <div className="flex-1 min-w-0">
+        <div className="mb-6 flex items-baseline justify-between gap-4">
+          <div className="text-xs uppercase tracking-wider" style={{ color: "var(--muted)" }}>
+            Featured theory
+          </div>
+          <div className="text-xs" style={{ color: "var(--muted)" }}>
+            <span className="serif italic text-base" style={{ color: "var(--fg)" }}>{theories.length}</span> theories total
+          </div>
+        </div>
         {featured && (
           <div className="mb-10">
             <TheoryCard t={featured} hero />
