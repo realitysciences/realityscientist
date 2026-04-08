@@ -44,8 +44,8 @@ body {
   .prose-serif { font-size: 18px; line-height: 1.8; }
 }
 .prose-serif p { margin: 1.1em 0; }
-.prose-serif h2 { font-size: 1.5rem; font-style: italic; margin: 2rem 0 0.75rem; font-weight: 400; color: var(--topic-ink, var(--fg)); }
-.prose-serif h3 { font-size: 1.2rem; font-style: italic; margin: 1.5rem 0 0.5rem; font-weight: 400; color: var(--topic-ink, var(--fg)); }
+.prose-serif h2 { font-size: 1.5rem; font-style: italic; margin: 2rem 0 0.75rem; font-weight: 400; color: var(--muted); }
+.prose-serif h3 { font-size: 1.2rem; font-style: italic; margin: 1.5rem 0 0.5rem; font-weight: 400; color: var(--muted); }
 .prose-serif blockquote {
   border-left: 3px solid var(--fg);
   padding: 0.25rem 0 0.25rem 1.25rem;
