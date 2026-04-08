@@ -144,6 +144,34 @@ const CUSTOM: Record<string, (ink: string) => JSX.Element> = {
     </g>
   ),
 
+  "musk-as-process": (ink) => (
+    <g stroke={ink} strokeWidth="1.4" fill="none">
+      {/* head silhouette as a node in a flow diagram */}
+      <circle cx="200" cy="110" r="38" />
+      {/* process arrows feeding in from left (inputs: risk, time, effort) */}
+      <path d="M30 60 L160 95" />
+      <path d="M30 110 L160 110" />
+      <path d="M30 160 L160 130" />
+      {/* arrowheads on input lines */}
+      <path d="M156 92 L165 95 L158 101 Z" fill={ink} stroke="none" />
+      <path d="M156 107 L165 110 L156 113 Z" fill={ink} stroke="none" />
+      <path d="M156 127 L165 130 L158 135 Z" fill={ink} stroke="none" />
+      {/* output arrows on the right (technologies pushed forward) */}
+      <path d="M240 80 L370 50" />
+      <path d="M240 110 L370 110" />
+      <path d="M240 140 L370 170" />
+      <path d="M362 47 L372 49 L366 56 Z" fill={ink} stroke="none" />
+      <path d="M362 107 L372 110 L362 113 Z" fill={ink} stroke="none" />
+      <path d="M362 167 L372 170 L364 175 Z" fill={ink} stroke="none" />
+      {/* small gear/process indicator inside the circle */}
+      <circle cx="200" cy="110" r="14" />
+      <line x1="200" y1="96" x2="200" y2="124" />
+      <line x1="186" y1="110" x2="214" y2="110" />
+      <line x1="190" y1="100" x2="210" y2="120" />
+      <line x1="210" y1="100" x2="190" y2="120" />
+    </g>
+  ),
+
   "kardashev-irony": (ink) => (
     <g stroke={ink} strokeWidth="1.4" fill="none">
       {/* three-tier bar chart representing Type I, II, III */}
