@@ -144,6 +144,29 @@ const CUSTOM: Record<string, (ink: string) => JSX.Element> = {
     </g>
   ),
 
+  "kardashev-irony": (ink) => (
+    <g stroke={ink} strokeWidth="1.4" fill="none">
+      {/* three-tier bar chart representing Type I, II, III */}
+      {/* Type III bar (tallest, right) */}
+      <rect x="290" y="40" width="50" height="155" opacity="0.25" />
+      <text x="315" y="210" textAnchor="middle" fontSize="9" fill={ink} opacity="0.6" fontFamily="sans-serif">III</text>
+      {/* Type II bar (medium, center) */}
+      <rect x="220" y="90" width="50" height="105" opacity="0.25" />
+      <text x="245" y="210" textAnchor="middle" fontSize="9" fill={ink} opacity="0.6" fontFamily="sans-serif">II</text>
+      {/* Type I bar (smaller, left-center) */}
+      <rect x="150" y="130" width="50" height="65" opacity="0.25" />
+      <text x="175" y="210" textAnchor="middle" fontSize="9" fill={ink} opacity="0.6" fontFamily="sans-serif">I</text>
+      {/* Current human bar (tiny stub, far left) */}
+      <rect x="80" y="183" width="50" height="12" fill={ink} opacity="0.6" />
+      <text x="105" y="210" textAnchor="middle" fontSize="9" fill={ink} fontFamily="sans-serif">0.73</text>
+      {/* baseline */}
+      <line x1="60" y1="195" x2="370" y2="195" strokeWidth="1.5" />
+      {/* arrow pointing wistfully from the tiny bar toward the tall ones */}
+      <path d="M130 189 Q200 160 275 100" strokeDasharray="5 4" opacity="0.5" />
+      <path d="M272 97 L282 96 L278 106 Z" fill={ink} stroke="none" opacity="0.5" />
+    </g>
+  ),
+
   "the-star-that-forgot": (ink) => (
     <g stroke={ink} strokeWidth="1.4" fill="none">
       {/* large star burst in center */}
