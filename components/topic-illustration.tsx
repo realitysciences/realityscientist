@@ -144,6 +144,31 @@ const CUSTOM: Record<string, (ink: string) => JSX.Element> = {
     </g>
   ),
 
+  "vr-inside-vr": (ink) => (
+    <g stroke={ink} strokeWidth="1.4" fill="none">
+      {/* outer headset shape */}
+      <rect x="60" y="75" width="280" height="80" rx="14" />
+      <path d="M60 105 Q40 110 35 120 Q40 130 60 135" />
+      <path d="M340 105 Q360 110 365 120 Q360 130 340 135" />
+      {/* two lenses */}
+      <ellipse cx="155" cy="115" rx="45" ry="30" />
+      <ellipse cx="245" cy="115" rx="45" ry="30" />
+      {/* inner screen inside left lens: another headset, tiny */}
+      <rect x="120" y="98" width="70" height="34" rx="6" strokeWidth="1" opacity="0.7" />
+      <ellipse cx="143" cy="115" rx="13" ry="11" strokeWidth="1" opacity="0.7" />
+      <ellipse cx="177" cy="115" rx="13" ry="11" strokeWidth="1" opacity="0.7" />
+      {/* inner screen inside right lens: same tiny headset */}
+      <rect x="210" y="98" width="70" height="34" rx="6" strokeWidth="1" opacity="0.7" />
+      <ellipse cx="233" cy="115" rx="13" ry="11" strokeWidth="1" opacity="0.7" />
+      <ellipse cx="267" cy="115" rx="13" ry="11" strokeWidth="1" opacity="0.7" />
+      {/* bridge */}
+      <line x1="200" y1="108" x2="200" y2="122" />
+      {/* strap lines */}
+      <path d="M340 90 Q370 90 380 110" opacity="0.5" />
+      <path d="M60 90 Q30 90 20 110" opacity="0.5" />
+    </g>
+  ),
+
   "fairness-is-a-human-word": (ink) => (
     <g stroke={ink} strokeWidth="1.5" fill="none">
       {/* unbalanced scale */}
