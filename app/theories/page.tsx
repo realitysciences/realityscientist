@@ -6,14 +6,29 @@ import Link from "next/link";
 
 export const metadata = { title: "Theories" };
 
+type Sort = "newest" | "oldest";
+
+function buildHref(topic: Topic | undefined, sort: Sort) {
+  const params = new URLSearchParams();
+  if (topic) params.set("topic", topic);
+  if (sort !== "newest") params.set("sort", sort);
+  const qs = params.toString();
+  return qs ? `/theories?${qs}` : "/theories";
+}
+
 export default function TheoriesPage({
   searchParams,
 }: {
-  searchParams: { topic?: string };
+  searchParams: { topic?: string; sort?: string };
 }) {
   const all = getAllTheories();
   const topic = searchParams.topic as Topic | undefined;
-  const filtered = topic ? all.filter((t) => t.topic === topic) : all;
+  const sort: Sort = searchParams.sort === "oldest" ? "oldest" : "newest";
+
+  const filteredByTopic = topic ? all.filter((t) => t.topic === topic) : all;
+  const filtered = [...filteredByTopic].sort((a, b) =>
+    sort === "newest" ? (a.date < b.date ? 1 : -1) : a.date < b.date ? -1 : 1
+  );
 
   return (
     <div className="flex flex-col md:flex-row gap-8 md:gap-10">
@@ -24,9 +39,10 @@ export default function TheoriesPage({
           {filtered.length} {filtered.length === 1 ? "entry" : "entries"}
           {topic ? ` in ${topic}` : ""}
         </p>
-        <div className="flex flex-wrap gap-2 mb-8">
+
+        <div className="flex flex-wrap gap-2 mb-4">
           <Link
-            href="/theories"
+            href={buildHref(undefined, sort)}
             className="px-3 py-1 text-xs rounded-full border"
             style={{
               borderColor: "var(--border)",
@@ -38,7 +54,7 @@ export default function TheoriesPage({
           {TOPICS.map((t) => (
             <Link
               key={t}
-              href={`/theories?topic=${t}`}
+              href={buildHref(t, sort)}
               className="px-3 py-1 text-xs rounded-full border"
               style={{
                 borderColor: topic === t ? "var(--fg)" : "var(--border)",
@@ -48,6 +64,32 @@ export default function TheoriesPage({
               {t}
             </Link>
           ))}
+        </div>
+
+        <div className="flex items-center gap-2 mb-8">
+          <span className="text-[11px] uppercase tracking-wider" style={{ color: "var(--muted)" }}>
+            Sort
+          </span>
+          <Link
+            href={buildHref(topic, "newest")}
+            className="px-3 py-1 text-xs rounded-full border"
+            style={{
+              borderColor: sort === "newest" ? "var(--fg)" : "var(--border)",
+              background: sort === "newest" ? "var(--surface)" : "transparent",
+            }}
+          >
+            Newest first
+          </Link>
+          <Link
+            href={buildHref(topic, "oldest")}
+            className="px-3 py-1 text-xs rounded-full border"
+            style={{
+              borderColor: sort === "oldest" ? "var(--fg)" : "var(--border)",
+              background: sort === "oldest" ? "var(--surface)" : "transparent",
+            }}
+          >
+            Oldest first
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -75,7 +75,7 @@ export function SidebarLinks({ compact = false }: { compact?: boolean }) {
       </div>
       <ul className={`space-y-1 ${sizeLink}`}>
         <li><a href="https://x.com/relohu" className="underline" style={{ textUnderlineOffset: 3 }}>@relohu</a></li>
-        <li><a href="https://x.com/spheronaut" className="underline" style={{ textUnderlineOffset: 3 }}>@spheronaut</a></li>
+        <li><a href="https://x.com/realitysciences" className="underline" style={{ textUnderlineOffset: 3 }}>@realitysciences</a></li>
         <li><a href="https://x.com/rosecolornews" className="underline" style={{ textUnderlineOffset: 3 }}>@rosecolornews</a></li>
         <li><a href="https://x.com/mindreportai" className="underline" style={{ textUnderlineOffset: 3 }}>@mindreportai</a></li>
       </ul>
