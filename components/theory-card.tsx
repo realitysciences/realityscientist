@@ -18,11 +18,9 @@ export function TheoryCard({ t, hero = false }: { t: Theory; hero?: boolean }) {
         <h3 className={`serif italic ${hero ? "text-2xl sm:text-3xl" : "text-xl sm:text-2xl"} leading-snug mb-3`}>
           {t.title}
         </h3>
-        {hero && (
-          <p className="text-base sm:text-lg mb-3 leading-relaxed" style={{ color: "var(--muted)" }}>
-            {t.excerpt}
-          </p>
-        )}
+        <p className={`${hero ? "text-base sm:text-lg" : "text-sm sm:text-base"} mb-3 leading-relaxed`} style={{ color: "var(--muted)" }}>
+          {t.excerpt}
+        </p>
         <div className="text-sm" style={{ color: "var(--muted)" }}>
           {formatDate(t.date)} · {t.readTime}
         </div>
