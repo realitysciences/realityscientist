@@ -144,6 +144,45 @@ const CUSTOM: Record<string, (ink: string) => JSX.Element> = {
     </g>
   ),
 
+  "the-star-that-forgot": (ink) => (
+    <g stroke={ink} strokeWidth="1.4" fill="none">
+      {/* large star burst in center */}
+      {[...Array(12)].map((_, i) => {
+        const a = (i / 12) * Math.PI * 2;
+        const inner = 22;
+        const outer = 52;
+        return (
+          <line
+            key={i}
+            x1={200 + Math.cos(a) * inner}
+            y1={110 + Math.sin(a) * inner}
+            x2={200 + Math.cos(a) * outer}
+            y2={110 + Math.sin(a) * outer}
+            opacity={0.5 + (i % 3) * 0.15}
+          />
+        );
+      })}
+      <circle cx="200" cy="110" r="22" />
+      <circle cx="200" cy="110" r="10" fill={ink} opacity="0.3" />
+      {/* smaller distant stars scattered */}
+      <circle cx="60" cy="45" r="3" fill={ink} opacity="0.7" />
+      <circle cx="330" cy="55" r="4" fill={ink} opacity="0.6" />
+      <circle cx="85" cy="170" r="2.5" fill={ink} opacity="0.5" />
+      <circle cx="350" cy="175" r="3" fill={ink} opacity="0.7" />
+      <circle cx="130" cy="35" r="2" fill={ink} opacity="0.5" />
+      <circle cx="280" cy="30" r="2.5" fill={ink} opacity="0.6" />
+      <circle cx="40" cy="115" r="2" fill={ink} opacity="0.4" />
+      <circle cx="370" cy="130" r="2" fill={ink} opacity="0.4" />
+      {/* dotted trail from one distant star down to center, suggesting origin */}
+      <path d="M330 55 Q280 75 240 95" strokeDasharray="4 5" opacity="0.4" />
+      {/* human silhouette inside the star (tiny, gestural) */}
+      <circle cx="200" cy="101" r="3.5" />
+      <line x1="200" y1="104" x2="200" y2="116" />
+      <path d="M194 108 L206 108" />
+      <path d="M200 116 L196 122 M200 116 L204 122" />
+    </g>
+  ),
+
   "vr-inside-vr": (ink) => (
     <g stroke={ink} strokeWidth="1.4" fill="none">
       {/* outer headset shape */}
