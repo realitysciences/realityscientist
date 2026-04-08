@@ -1,9 +1,11 @@
+import React from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import type { Metadata } from "next";
 import { Sidebar, SidebarLinks } from "@/components/sidebar";
 import { getAllTheories, getTheory } from "@/lib/theories";
+import { TOPIC_INK } from "@/lib/topics";
 
 export function generateStaticParams() {
   return getAllTheories().map((t) => ({ slug: t.slug }));
@@ -29,7 +31,10 @@ export default function TheoryPage({ params }: { params: { slug: string } }) {
   return (
     <div className="flex flex-col md:flex-row gap-8 md:gap-10">
       <Sidebar activeTopic={t.topic} />
-      <article className="flex-1 min-w-0 max-w-2xl">
+      <article
+        className="flex-1 min-w-0 max-w-2xl"
+        style={{ "--topic-ink": TOPIC_INK[t.topic] } as React.CSSProperties}
+      >
         <nav className="text-sm mb-6" style={{ color: "var(--muted)" }}>
           <Link href="/theories">Theories</Link> / <Link href={`/theories?topic=${t.topic}`}>{t.topic}</Link>
         </nav>
@@ -39,7 +44,12 @@ export default function TheoryPage({ params }: { params: { slug: string } }) {
         >
           Theory · {t.topic}
         </div>
-        <h1 className="serif italic text-3xl sm:text-4xl md:text-5xl leading-tight mb-4">{t.title}</h1>
+        <h1
+          className="serif italic text-3xl sm:text-4xl md:text-5xl leading-tight mb-4"
+          style={{ color: TOPIC_INK[t.topic] }}
+        >
+          {t.title}
+        </h1>
         <div className="text-sm mb-10" style={{ color: "var(--muted)" }}>
           {new Date(t.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
           {" · "}{t.readTime}{" · "}Status: {t.status}
