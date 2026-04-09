@@ -7,7 +7,7 @@ export function Topbar() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-5">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <Link href="/" className="flex flex-col leading-tight">
-            <span className="wordmark text-xl sm:text-2xl">Reality Scientist</span>
+            <span className="wordmark text-xl sm:text-2xl">Reality Scientist<sup className="text-[0.45em] ml-0.5 not-italic" style={{ fontStyle: "normal" }}>™</sup></span>
             <span className="text-[11px] sm:text-xs" style={{ color: "var(--muted)" }}>
               Dr. David Benson
             </span>

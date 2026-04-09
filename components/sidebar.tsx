@@ -14,7 +14,7 @@ export function Sidebar({ activeTopic, hideTopics = false }: { activeTopic?: str
       <div className="text-xs uppercase tracking-wider mb-1" style={{ color: "var(--muted)" }}>Gedalia</div>
       <div className="serif italic text-xl leading-tight">Dr. David Benson</div>
       <div className="text-sm mb-3" style={{ color: "var(--muted)" }}>
-        Reality Scientist
+        Reality Scientist<sup className="text-[0.6em] ml-0.5">™</sup>
       </div>
       <p className="text-sm leading-relaxed mb-5" style={{ color: "var(--muted)" }}>
         Investigating the structure of experience , time, identity, memory, and
