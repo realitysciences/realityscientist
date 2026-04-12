@@ -144,6 +144,31 @@ const CUSTOM: Record<string, (ink: string) => JSX.Element> = {
     </g>
   ),
 
+  "the-witness-theorem": (ink) => (
+    <g stroke={ink} strokeWidth="1.4" fill="none">
+      {/* left: cloud of dots representing possibility terrain */}
+      {[30, 45, 55, 70, 40, 60, 50, 35, 65].map((x, i) => (
+        <circle key={`p${i}`} cx={x + (i % 3) * 10} cy={70 + (i % 4) * 30} r={2 + (i % 3)} opacity={0.3 + (i % 3) * 0.1} />
+      ))}
+      {/* crystallization front: vertical dashed line */}
+      <line x1="160" y1="40" x2="160" y2="190" strokeDasharray="6 4" strokeWidth="2" opacity="0.7" />
+      {/* eye/witness symbol at the front */}
+      <ellipse cx="200" cy="110" rx="30" ry="20" />
+      <circle cx="200" cy="110" r="9" fill={ink} opacity="0.4" />
+      <circle cx="200" cy="110" r="4" fill={ink} />
+      {/* right: crystallized geometric shapes (reality/residue) */}
+      <rect x="270" y="70" width="25" height="25" transform="rotate(15 282 82)" opacity="0.7" />
+      <polygon points="320,55 340,95 300,95" opacity="0.6" />
+      <rect x="350" y="80" width="20" height="20" opacity="0.5" />
+      <polygon points="280,140 310,130 305,165 275,160" opacity="0.6" />
+      <rect x="335" y="130" width="18" height="18" transform="rotate(-10 344 139)" opacity="0.5" />
+      {/* arrows from front to crystals */}
+      <path d="M230 100 L265 85" strokeDasharray="3 3" opacity="0.4" />
+      <path d="M230 115 L270 145" strokeDasharray="3 3" opacity="0.4" />
+      <path d="M230 105 L310 70" strokeDasharray="3 3" opacity="0.3" />
+    </g>
+  ),
+
   "musk-as-process": (ink) => (
     <g stroke={ink} strokeWidth="1.4" fill="none">
       {/* head silhouette as a node in a flow diagram */}
@@ -325,6 +350,17 @@ function defaultArt(topic: Topic, ink: string) {
           );
         })}
         <circle cx="200" cy="110" r="20" />
+      </g>
+    );
+  }
+  if (topic === "Ontology") {
+    return (
+      <g stroke={ink} strokeWidth="1.4" fill="none">
+        {/* nested diamonds representing layers of reality */}
+        <rect x="160" y="70" width="80" height="80" transform="rotate(45 200 110)" />
+        <rect x="170" y="80" width="60" height="60" transform="rotate(45 200 110)" opacity="0.7" />
+        <rect x="180" y="90" width="40" height="40" transform="rotate(45 200 110)" opacity="0.5" />
+        <circle cx="200" cy="110" r="5" fill={ink} opacity="0.5" />
       </g>
     );
   }

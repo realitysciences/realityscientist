@@ -4,7 +4,8 @@ export type Topic =
   | "Structure"
   | "Memory"
   | "Perception"
-  | "Language";
+  | "Language"
+  | "Ontology";
 
 export const TOPICS: Topic[] = [
   "Time",
@@ -13,6 +14,7 @@ export const TOPICS: Topic[] = [
   "Memory",
   "Perception",
   "Language",
+  "Ontology",
 ];
 
 export const TOPIC_COLORS: Record<Topic, { light: string; dark: string }> = {
@@ -22,6 +24,7 @@ export const TOPIC_COLORS: Record<Topic, { light: string; dark: string }> = {
   Memory:     { light: "#FAEEDA", dark: "#412402" },
   Perception: { light: "#FBEAF0", dark: "#4B1528" },
   Language:   { light: "#E6F1FB", dark: "#042C53" },
+  Ontology:   { light: "#E8F4F8", dark: "#0C3644" },
 };
 
 export const TOPIC_INK: Record<Topic, string> = {
@@ -31,4 +34,5 @@ export const TOPIC_INK: Record<Topic, string> = {
   Memory: "#b07418",
   Perception: "#c4467a",
   Language: "#1e6bb8",
+  Ontology: "#1a8a9a",
 };

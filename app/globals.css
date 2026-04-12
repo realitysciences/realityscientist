@@ -14,6 +14,7 @@
   --topic-memory: #FAEEDA;
   --topic-perception: #FBEAF0;
   --topic-language: #E6F1FB;
+  --topic-ontology: #E8F4F8;
 }
 .dark {
   --topic-time: #26215C;
@@ -22,6 +23,7 @@
   --topic-memory: #412402;
   --topic-perception: #4B1528;
   --topic-language: #042C53;
+  --topic-ontology: #0C3644;
   --bg: #0f0f0e;
   --fg: #f0efe8;
   --muted: #8a8a82;
