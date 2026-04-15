@@ -7,9 +7,9 @@ export function Sidebar({ activeTopic, hideTopics = false }: { activeTopic?: str
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/avatar.png"
-        alt="Dr. David Benson"
-        className="w-24 h-24 mb-4 object-contain"
-        style={{ borderColor: "var(--border)" }}
+        alt="Dr. David Benson at the Reality Science podium"
+        className="w-full max-w-[200px] md:w-full mb-4 rounded-md object-cover border"
+        style={{ borderColor: "var(--border)", aspectRatio: "2 / 3" }}
       />
       <div className="text-xs uppercase tracking-wider mb-1" style={{ color: "var(--muted)" }}>Gedalia</div>
       <div className="serif italic text-xl leading-tight">Dr. David Benson</div>
