@@ -4,18 +4,20 @@ import { TOPICS } from "@/lib/topics";
 export function Sidebar({ activeTopic, hideTopics = false }: { activeTopic?: string; hideTopics?: boolean }) {
   return (
     <aside className="w-full md:w-[220px] md:shrink-0 text-base">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/avatar.png"
-        alt="Dr. David Benson at the Reality Science podium"
-        className="w-full max-w-[200px] md:w-full mb-4 rounded-md object-cover border"
-        style={{ borderColor: "var(--border)", aspectRatio: "2 / 3" }}
-      />
-      <div className="text-xs uppercase tracking-wider mb-1" style={{ color: "var(--muted)" }}>Gedalia</div>
-      <div className="serif italic text-xl leading-tight">Dr. David Benson</div>
-      <div className="text-sm mb-3" style={{ color: "var(--muted)" }}>
-        Reality Scientist<sup className="text-[0.6em] ml-0.5">™</sup>
-      </div>
+      <Link href="/" className="block group" aria-label="Back to home">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/avatar.png"
+          alt="Dr. David Benson at the Reality Science podium"
+          className="w-full max-w-[200px] md:w-full mb-4 rounded-md object-cover border transition-opacity group-hover:opacity-90"
+          style={{ borderColor: "var(--border)", aspectRatio: "2 / 3" }}
+        />
+        <div className="text-xs uppercase tracking-wider mb-1" style={{ color: "var(--muted)" }}>Gedalia</div>
+        <div className="serif italic text-xl leading-tight">Dr. David Benson</div>
+        <div className="text-sm mb-3" style={{ color: "var(--muted)" }}>
+          Reality Scientist<sup className="text-[0.6em] ml-0.5">™</sup>
+        </div>
+      </Link>
       <p className="text-sm leading-relaxed mb-5" style={{ color: "var(--muted)" }}>
         Investigating the structure of experience: time, identity, memory, and
         the patterns underneath.
