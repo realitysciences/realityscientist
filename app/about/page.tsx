@@ -14,7 +14,7 @@ export default function AboutPage() {
             philosophy of mind, cognitive science, and contemplative practice.
           </p>
           <p>
-            He calls the work <em>reality science</em> , the careful study of how
+            He calls the work <em>reality science</em>: the careful study of how
             experience is structured: time, identity, memory, perception, and the
             language we use to talk about any of it.
           </p>

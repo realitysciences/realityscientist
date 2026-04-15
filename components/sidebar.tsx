@@ -17,7 +17,7 @@ export function Sidebar({ activeTopic, hideTopics = false }: { activeTopic?: str
         Reality Scientist<sup className="text-[0.6em] ml-0.5">™</sup>
       </div>
       <p className="text-sm leading-relaxed mb-5" style={{ color: "var(--muted)" }}>
-        Investigating the structure of experience , time, identity, memory, and
+        Investigating the structure of experience: time, identity, memory, and
         the patterns underneath.
       </p>
 

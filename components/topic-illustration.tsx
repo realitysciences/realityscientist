@@ -144,6 +144,35 @@ const CUSTOM: Record<string, (ink: string) => JSX.Element> = {
     </g>
   ),
 
+  "the-continuum-observer": (ink) => (
+    <g stroke={ink} strokeWidth="1.4" fill="none">
+      {/* outer field: concentric rings representing awareness field */}
+      <circle cx="200" cy="110" r="95" opacity="0.15" />
+      <circle cx="200" cy="110" r="75" opacity="0.25" />
+      <circle cx="200" cy="110" r="55" opacity="0.4" />
+      {/* recursion: eye observing itself observing */}
+      <ellipse cx="200" cy="110" rx="40" ry="28" />
+      <ellipse cx="200" cy="110" rx="28" ry="20" opacity="0.7" />
+      <ellipse cx="200" cy="110" rx="18" ry="13" opacity="0.7" />
+      <ellipse cx="200" cy="110" rx="10" ry="7" opacity="0.8" />
+      <circle cx="200" cy="110" r="4" fill={ink} />
+      {/* field lines radiating outward */}
+      {[...Array(8)].map((_, i) => {
+        const a = (i / 8) * Math.PI * 2;
+        return (
+          <line
+            key={i}
+            x1={200 + Math.cos(a) * 100}
+            y1={110 + Math.sin(a) * 100}
+            x2={200 + Math.cos(a) * 115}
+            y2={110 + Math.sin(a) * 115}
+            opacity="0.5"
+          />
+        );
+      })}
+    </g>
+  ),
+
   "the-witness-theorem": (ink) => (
     <g stroke={ink} strokeWidth="1.4" fill="none">
       {/* left: cloud of dots representing possibility terrain */}
