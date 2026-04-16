@@ -144,6 +144,36 @@ const CUSTOM: Record<string, (ink: string) => JSX.Element> = {
     </g>
   ),
 
+  "there-is-no-coffee-shop": (ink) => (
+    <g stroke={ink} strokeWidth="1.4" fill="none">
+      {/* coffee cup (outline of the rendered scene) */}
+      <path d="M140 80 L140 145 Q140 165 165 165 L225 165 Q250 165 250 145 L250 80 Z" opacity="0.6" />
+      <path d="M250 95 Q280 95 280 115 Q280 135 250 135" opacity="0.6" />
+      {/* saucer */}
+      <ellipse cx="195" cy="168" rx="70" ry="6" opacity="0.5" />
+      {/* steam / signals dissolving upward */}
+      <path d="M170 75 Q175 60 170 45 Q165 30 175 15" strokeDasharray="3 4" opacity="0.6" />
+      <path d="M195 75 Q200 58 195 42 Q190 26 200 12" strokeDasharray="3 4" opacity="0.6" />
+      <path d="M220 75 Q225 60 220 45 Q215 30 225 15" strokeDasharray="3 4" opacity="0.6" />
+      {/* the cup itself breaking into dots on one side, showing its constructed nature */}
+      <circle cx="135" cy="100" r="1.5" fill={ink} opacity="0.6" />
+      <circle cx="130" cy="115" r="1.5" fill={ink} opacity="0.5" />
+      <circle cx="125" cy="130" r="1.5" fill={ink} opacity="0.4" />
+      <circle cx="120" cy="148" r="1.5" fill={ink} opacity="0.3" />
+      <circle cx="112" cy="160" r="1.5" fill={ink} opacity="0.25" />
+      <circle cx="100" cy="170" r="1.5" fill={ink} opacity="0.2" />
+      <circle cx="255" cy="100" r="1.5" fill={ink} opacity="0.6" />
+      <circle cx="260" cy="115" r="1.5" fill={ink} opacity="0.5" />
+      <circle cx="265" cy="130" r="1.5" fill={ink} opacity="0.4" />
+      <circle cx="272" cy="148" r="1.5" fill={ink} opacity="0.3" />
+      <circle cx="280" cy="160" r="1.5" fill={ink} opacity="0.25" />
+      <circle cx="292" cy="170" r="1.5" fill={ink} opacity="0.2" />
+      {/* faint bracket of brackets on the right suggesting code/signals */}
+      <path d="M340 70 L355 70 L355 150 L340 150" opacity="0.3" />
+      <text x="347" y="115" fontSize="12" fill={ink} opacity="0.4" textAnchor="middle" fontFamily="monospace">01</text>
+    </g>
+  ),
+
   "the-continuum-observer": (ink) => (
     <g stroke={ink} strokeWidth="1.4" fill="none">
       {/* outer field: concentric rings representing awareness field */}
