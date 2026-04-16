@@ -144,6 +144,34 @@ const CUSTOM: Record<string, (ink: string) => JSX.Element> = {
     </g>
   ),
 
+  "the-flesh-economy": (ink) => (
+    <g stroke={ink} strokeWidth="1.4" fill="none">
+      {/* food chain as a pyramid of silhouettes with downward-pointing arrows */}
+      {/* top of pyramid: smallest apex (consumer) */}
+      <polygon points="195,40 205,40 200,28" fill={ink} opacity="0.85" stroke="none" />
+      {/* second tier */}
+      <polygon points="180,60 220,60 200,40" fill={ink} opacity="0.7" stroke="none" />
+      {/* third tier */}
+      <polygon points="160,85 240,85 200,60" fill={ink} opacity="0.55" stroke="none" />
+      {/* fourth tier */}
+      <polygon points="135,115 265,115 200,85" fill={ink} opacity="0.4" stroke="none" />
+      {/* base tier */}
+      <polygon points="100,150 300,150 200,115" fill={ink} opacity="0.25" stroke="none" />
+      {/* cage bars framing the pyramid, suggesting a structural prison */}
+      <line x1="80" y1="25" x2="80" y2="180" opacity="0.5" />
+      <line x1="100" y1="25" x2="100" y2="180" opacity="0.5" />
+      <line x1="120" y1="25" x2="120" y2="180" opacity="0.5" />
+      <line x1="280" y1="25" x2="280" y2="180" opacity="0.5" />
+      <line x1="300" y1="25" x2="300" y2="180" opacity="0.5" />
+      <line x1="320" y1="25" x2="320" y2="180" opacity="0.5" />
+      {/* horizontal cross-bar top and bottom */}
+      <line x1="75" y1="25" x2="325" y2="25" opacity="0.5" />
+      <line x1="75" y1="180" x2="325" y2="180" opacity="0.5" />
+      {/* ground indicator */}
+      <line x1="100" y1="152" x2="300" y2="152" opacity="0.4" />
+    </g>
+  ),
+
   "the-glitch-theory-of-perception": (ink) => (
     <g stroke={ink} strokeWidth="1.4" fill="none">
       {/* scanlines / signal bars across the field, with one 'glitched' offset */}
