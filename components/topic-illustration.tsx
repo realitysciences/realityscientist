@@ -144,6 +144,28 @@ const CUSTOM: Record<string, (ink: string) => JSX.Element> = {
     </g>
   ),
 
+  "the-glitch-theory-of-perception": (ink) => (
+    <g stroke={ink} strokeWidth="1.4" fill="none">
+      {/* scanlines / signal bars across the field, with one 'glitched' offset */}
+      <line x1="20" y1="50" x2="380" y2="50" opacity="0.4" />
+      <line x1="20" y1="65" x2="380" y2="65" opacity="0.4" />
+      <line x1="20" y1="80" x2="380" y2="80" opacity="0.5" />
+      <line x1="20" y1="95" x2="180" y2="95" opacity="0.7" strokeWidth="2" />
+      <line x1="220" y1="92" x2="380" y2="92" opacity="0.7" strokeWidth="2" />
+      <line x1="20" y1="110" x2="380" y2="110" opacity="0.5" />
+      <line x1="20" y1="125" x2="380" y2="125" opacity="0.5" />
+      <line x1="20" y1="140" x2="180" y2="140" opacity="0.6" />
+      <line x1="220" y1="143" x2="380" y2="143" opacity="0.6" />
+      <line x1="20" y1="155" x2="380" y2="155" opacity="0.4" />
+      <line x1="20" y1="170" x2="380" y2="170" opacity="0.4" />
+      {/* prediction square (dashed, slightly offset from reality square solid) */}
+      <rect x="155" y="78" width="55" height="40" strokeDasharray="4 3" opacity="0.7" />
+      <rect x="165" y="82" width="55" height="40" opacity="0.9" />
+      {/* tiny tag indicators */}
+      <circle cx="200" cy="98" r="2.5" fill={ink} opacity="0.8" />
+    </g>
+  ),
+
   "there-is-no-coffee-shop": (ink) => (
     <g stroke={ink} strokeWidth="1.4" fill="none">
       {/* coffee cup (outline of the rendered scene) */}
